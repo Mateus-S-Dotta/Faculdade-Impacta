@@ -16,3 +16,9 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 ```
 
 ## E reincie o VSCODE
+
+# Para ativar o Docker do Python
+
+```bash
+./run-docker.sh
+```

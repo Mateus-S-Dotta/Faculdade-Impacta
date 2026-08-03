@@ -1,5 +1,6 @@
 # Instalando a extenção do Dracula
 code --install-extension yomed.theme-dracula-soft
+code --install-extension ms-python.python
 
 # Caminho da pasta e do arquivo
 $pastaUser = "$env:APPDATA\Code\User"
@@ -78,6 +79,23 @@ gpush() {
 [System.IO.File]::WriteAllText($arquivoBashProfile, $bashProfileContent, (New-Object System.Text.UTF8Encoding $false))
 
 Write-Host "Arquivo .bash_profile criado com sucesso em $arquivoBashProfile"
+
+Start-Process "$Env:ProgramFiles\Docker\Docker\Docker Desktop.exe"
+
+Write-Host "Aguardando o Docker iniciar..."
+
+# Espera até o Docker responder
+while ($true) {
+    try {
+        docker info *> $null
+        break
+    }
+    catch {
+        Start-Sleep -Seconds 2
+    }
+}
+
+Write-Host "Docker está pronto!"
 
 # Sobe o ambiente de desenvolvimento Python via Docker
 docker compose run --rm python-dev bash
