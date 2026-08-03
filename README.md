@@ -1,8 +1,18 @@
-Para rodar, cole esse comando no POWERSHELL
+# Como rodar o script
+
+## PowerShell
+```powershell
 powershell -ExecutionPolicy Bypass -File .\setup.ps1
+```
 
-Para rodar, cole esse comando no CMD
+## CMD
+```cmd
 powershell -ExecutionPolicy Bypass -File setup.ps1
+```
 
-Para rodar, cole esse comando no GIT BASH
+## Git Bash
+```bash
 powershell -ExecutionPolicy Bypass -File setup.ps1
+```
+
+## E reincie o VSCODE

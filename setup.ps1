@@ -75,7 +75,7 @@ gpush() {
 '@
 
 # Escreve o .bash_profile (sobrescreve se já existir)
-Set-Content -Path $arquivoBashProfile -Value $bashProfileContent -Encoding UTF8
+[System.IO.File]::WriteAllText($arquivoBashProfile, $bashProfileContent, (New-Object System.Text.UTF8Encoding $false))
 
 Write-Host "Arquivo .bash_profile criado com sucesso em $arquivoBashProfile"
 
