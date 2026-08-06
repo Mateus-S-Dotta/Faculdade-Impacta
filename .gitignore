@@ -1,1 +1,8 @@
 debug.log
+# NUNCA remova essas linhas: é o que impede a chave privada de ir pro histórico do Git.
+# NUNCA remova essas linhas: é o que impede a chave privada de ir pro histórico do Git.
+git-tools/railforge-key
+git-tools/railforge-key.pub
+git-tools/main-key
+git-tools/main-key.pub
+*.pem
