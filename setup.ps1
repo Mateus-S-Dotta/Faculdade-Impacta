@@ -1,5 +1,5 @@
 # Instalando a extenção do Dracula
-code --install-extension yomed.theme-dracula-soft
+code --install-extension moderndraculalowcontrast.modern-dracula-low-contrast
 code --install-extension ms-python.python
 
 # Caminho da pasta e do arquivo
@@ -15,9 +15,15 @@ if (!(Test-Path $pastaUser)) {
 # Conteúdo do settings.json
 $settingsContent = @'
 {
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "workbench.colorTheme": "Dracula Theme Soft",
-  "editor.formatOnSave": true
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "workbench.editorAssociations": {
+        "*.xml": "default",
+    },
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Modern Dracula Low Contrast",
 }
 '@
 
@@ -27,27 +33,32 @@ $keybindingsContent = @'
   {
     "key": "ctrl+n",
     "command": "explorer.newFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus",
   },
   {
     "key": "ctrl+f",
     "command": "explorer.newFolder",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus",
   },
   {
     "key": "ctrl+shift+t",
     "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
+    "when": "!terminalFocus",
   },
   {
     "key": "ctrl+shift+t",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "when": "terminalFocus",
   },
   {
     "key": "ctrl+r",
     "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus",
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
   }
 ]
 '@
