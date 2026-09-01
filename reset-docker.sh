@@ -8,4 +8,4 @@ docker network prune -f
 
 docker builder prune -af
 
-docker volume ls -q | grep -v 'pgdata' | xargs -r docker volume rm
+docker volume ls -q | xargs -r docker volume rm
